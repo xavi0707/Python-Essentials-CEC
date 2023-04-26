@@ -1,0 +1,88 @@
+LISTAS
+lista=[1,5.3,"Hola",True]
+tupla=(1,5.3,"Hola",True)
+print(lista[0])
+print(lista[1])
+print(lista[2])
+print(lista[3])
+print(lista[-1])
+diccionario={"Mayte":22,"Diana":11,"David":19}
+print(diccionario)
+
+BRICS
+country=[
+    "Brazil", 
+    "Russia", 
+    "India", 
+    "China", 
+    "South Africa"]
+capitals={
+    "Brazil":"Brasilia",
+    "Russia":"Moscow",
+    "India":"New Delhi",
+    "China":"Beijing",
+    "South Africa":["Pretoria","Cape Town","Bloemfontein"]}
+print(country)
+print(capitals)
+
+print(capitals["South Africa"][1])
+
+VETERINARIA
+Nombres=input("Ingrese sus nombres:")
+Apellidos=input("Ingrese sus apellidos:")
+Mascota=input("Ingrese el nombre de su mascota:")
+Especie=input("Ingrese la especie de su mascota:")
+Edad=int(input("Ingrese la edad de su mascota:"))
+print("Gracias por visitar la Veterinaria OPTRA. Estimado/a "+
+      Nombres +" "+ Apellidos + " su mascota: "+Especie+", "+Mascota+" de "
+      +str(Edad)+" años de edad, será atendido/a lo más rápido posible.")
+
+CONTADOR
+contar=int(input("Ingrese al número que se debe contar: "))
+contador=1
+while(contador<=contar):
+    print(contador)
+    contador+=1
+    
+LABORATORIO 1
+def checkNum(promt, alto, bajo):
+    if promt <= alto and promt >= bajo:
+        print(promt) 
+        return True 
+    else:
+        print('Error: el valor no está dentro del rango permitido ({min}-{max})'.format(min=bajo,max=alto))
+def readInt(message):
+    while True:
+        try:
+            num = input(message)
+            return int(num) # si el valor no es un número acá ocurrirá un error
+        except:
+            print('Error: entrada incorrecta')
+while True:
+    alto = readInt('Ingrese el límite superior: ')
+    bajo  = readInt('Ingrese el límite inferior: ')
+    num  = readInt('Ingrese el número: ')
+
+    if checkNum(num, alto, bajo):
+        break
+print("El número es ", num)
+
+DISPOSITIVOS
+lista=[]
+file=open("devices.txt","r")
+for item in file:
+    item=item.strip()
+    lista.append(item)
+    print(item)
+file.close()
+
+DISPOSITIVOS 2
+file=open("devices.txt","a")
+while True:
+    newItem=input("Ingrese un nuevo dispositivo, al terminar digitar 'All done!': ")
+    if newItem!="All done!":
+        file.write("\n"+newItem)
+    if newItem=="All done!":
+        print("OK")
+        break
+file.close()
